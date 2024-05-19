@@ -15,11 +15,12 @@
             <li>Today is Friday, and you clocked in at <input type="time" id="clockin" fname="clockin" value="09:00" onchange="load()"/></li>
             <li>You will start your lunch break at <input type="time" id="lunch" fname="lunch" value="13:30" onchange="load()"/></li>
         </ol>
-        <p>Based on the numbers above,</p>
-        <p>if you end your lunch break at <span id="lunchend">12:30 PM</span> and<br />
-            clock out at <span id="clockout">4:30 PM</span> today,<br /></p>
-        <p>you will have worked exactly 40 hours.</p>
+        <p>Based on the numbers above:</p>
+        <p>if you end your lunch break at <span class="output" id="lunchend">12:30 PM</span>,<br />
+            you will have <span id="hoursleft">4</span> hours left to go.</p>
+        <p>And then, if you clock out at <span class="output" id="clockout">4:30 PM</span> today,<br />
+            you will have worked exactly 40 hours.</p>
     </main>
-
+    s
 </body>
 </html>

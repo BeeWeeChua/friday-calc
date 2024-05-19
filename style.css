@@ -31,9 +31,10 @@ header {
 
 main {
     width: 50%;
-    max-width: 500px;
+    max-width: 550px;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     border-radius: 20px;
     border-width: 0px;
     box-shadow: 0px 4px 12px rgba(166, 176, 186, 0.4);
@@ -59,7 +60,7 @@ main {
     width: 4em;
 }
 
-#lunchend, #clockout {
+.output {
     font-size: 25px;
     font-weight: bold;
 }
