@@ -1,0 +1,65 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
+
+* {
+    font-family: "Open Sans", sans-serif !important;
+}
+
+body {
+    margin: 0;
+    background-color: #f4f6f8;
+}
+
+header {
+    background-color: #323e48;
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+    header h1 {
+        color: #e1e6eb;
+        margin-left: 32px;
+        padding-block-start: 8px;
+        padding-block-end: 8px;
+        font-size: 16px;
+        display: flex;
+        position: relative;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+main {
+    width: 50%;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 20px;
+    border-width: 0px;
+    box-shadow: 0px 4px 12px rgba(166, 176, 186, 0.4);
+    background-color: white;
+    padding: 40px;
+    font-size: 20px;
+}
+
+    main li {
+        line-height: 25px;
+        padding-top: 25px;
+        padding-bottom:25px;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        border-bottom-color: #C9CFD4;
+    }
+
+    main input {
+        font-size: 20px;
+    }
+
+#hours {
+    width: 4em;
+}
+
+#lunchend, #clockout {
+    font-size: 25px;
+    font-weight: bold;
+}
