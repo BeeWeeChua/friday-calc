@@ -9,8 +9,18 @@ function load() {
     clockIn.setHours(clockInRaw.H, clockInRaw.M, 0, 0);
     lunch.setHours(lunchRaw.H, lunchRaw.M, 0, 0);
 
-    if (lunch.getTime() < clockIn.getTime()) document.getElementById("lunch").value = document.getElementById("clockin").value;
-    if (parseFloat(document.getElementById("hours").value) >= 40) document.getElementById("hours").value = 39;
+    if (lunch.getTime() < clockIn.getTime()) {
+        document.getElementById("lunch-container").style.backgroundColor = "yellow";
+        document.getElementById("lunch").value = document.getElementById("clockin").value;
+        document.getElementById("lunch").focus();
+        setTimeout(function() { document.getElementById("lunch-container").style.backgroundColor = ""; }, 500 ); 
+    }
+    if (parseFloat(document.getElementById("hours").value) >= 40) {
+        document.getElementById("hours-container").style.backgroundColor = "yellow";
+        document.getElementById("hours").value = 39;
+        document.getElementById("hours").focus();
+        setTimeout(function() { document.getElementById("hours-container").style.backgroundColor = ""; }, 500 ); 
+    }
 
     var lunchEnd = new Date();
     lunchEnd.setTime(lunch.getTime() + 0.5 * HR_MS);
@@ -18,8 +28,11 @@ function load() {
 
     var hoursWorked_ms = parseFloat(document.getElementById("hours").value) * HR_MS + (lunch.getTime() - clockIn.getTime());
     var hoursLeft_ms = (40 * HR_MS) - hoursWorked_ms;
-    if (hoursLeft_ms < 1) {
+    if (hoursLeft_ms < HR_MS) {
+        document.getElementById("hours-container").style.backgroundColor = "yellow";
         document.getElementById("hours").value = parseFloat(document.getElementById("hours").value) + (hoursLeft_ms / HR_MS) - 1;
+        document.getElementById("hours").focus();
+        setTimeout(function() { document.getElementById("hours-container").style.backgroundColor = ""; }, 500 ); 
         load();
         return;
     }
@@ -32,6 +45,11 @@ function load() {
     clockOut.setHours(clockOut.getHours() + hoursLeft);
     clockOut.setMinutes(clockOut.getMinutes() + minutesLeft);
     document.getElementById("clockout").textContent = clockOut.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    for (let i = 0; i < document.getElementsByClassName("output").length; ++i) {
+        const foo = document.getElementsByClassName("output")[i];
+        if (isNaN(foo.textContent.charAt(0))) { foo.textContent = "??"; }
+    }
 }
 
 function extractHM(timeString) {
