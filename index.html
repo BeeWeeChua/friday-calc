@@ -3,7 +3,8 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Friday Calculator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="script.js"></script>
 </head>
@@ -11,16 +12,15 @@
     <header><h1>The Friday Calculator</h1></header>
     <main>
         <ol>
-            <li>You've already worked <input type="number" id="hours" fname="hours" value="32.00" onchange="load()" /> hours this week</li>
+            <li>You've already worked <input type="number" id="hours" fname="hours" value="32.00" onchange="load()" /> hours this week, <b>from Monday to Thursday</b></li>
             <li>Today is Friday, and you clocked in at <input type="time" id="clockin" fname="clockin" value="09:00" onchange="load()"/></li>
             <li>You will start your lunch break at <input type="time" id="lunch" fname="lunch" value="13:30" onchange="load()"/></li>
         </ol>
         <p>Based on the numbers above:</p>
-        <p>if you end your lunch break at <span class="output" id="lunchend">12:30 PM</span>,<br />
-            you will have <span id="hoursleft">4</span> hours left to go.</p>
-        <p>And then, if you clock out at <span class="output" id="clockout">4:30 PM</span> today,<br />
+        <p>if you end your lunch break at <span class="output" id="lunchend"></span>,<br />
+            you will have <span id="hoursleft"></span> hours left to go.</p>
+        <p>And then, if you clock out at <span class="output" id="clockout"></span> today,<br />
             you will have worked exactly 40 hours.</p>
     </main>
-    s
 </body>
 </html>
